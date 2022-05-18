@@ -1,0 +1,24 @@
+- name: Condition
+  hosts: localhost
+  tasks:
+    # Number comparion
+    - name: Print if a == 10
+      debug:
+        msg: Yes  a is 10
+      when: a | int == 10
+
+    - name: Print if a > 100
+      debug:
+        msg: Yes  a is greater than 100
+      when: a | int > 100
+    # String Comparision
+    - name: DevOps Course
+      debug:
+        msg: DevOps Course
+      when: course == "DevOps"
+
+    # Boolean
+    - name: Print if variable x is true
+      debug:
+        msg: Yes True
+      when: x | bool
